@@ -11,11 +11,17 @@ public class PortalCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 offset = player.position - portal1.position;
-        transform.position = portal2.position + offset;
-        float angleOffset = Quaternion.Angle(portal1.rotation, portal2.rotation);
-        Quaternion rotation = Quaternion.AngleAxis(angleOffset, Vector3.up);
-        Vector3 direction = rotation * player.forward;
-        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+    transform.position = player.position;
+    transform.rotation = player.rotation;
+
+    //float angle = -Quaternion.Angle(portal1.rotation, portal2.rotation);
+    float angle = portal2.transform.eulerAngles.y - portal1.transform.eulerAngles.y;
+
+    transform.RotateAround(portal1.position, Vector3.up, angle);
+    Vector3 offset = portal2.position - portal1.position;
+
+    transform.position += offset; 
+
     }   
 }
