@@ -13,7 +13,7 @@ public class PortalCamera : MonoBehaviour
     {
         Vector3 offset = player.position - portal1.position;
         transform.position = portal2.position + offset;
-        float angleOffset = Quaternion.Angle(portal2.rotation, portal1.rotation);
+        float angleOffset = Quaternion.Angle(portal1.rotation, portal2.rotation);
         Quaternion rotation = Quaternion.AngleAxis(angleOffset, Vector3.up);
         Vector3 direction = rotation * player.forward;
         transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
