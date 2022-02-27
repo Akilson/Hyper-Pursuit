@@ -16,7 +16,7 @@ public class PortalTeleport : MonoBehaviour
             Vector3 portalToPlayer = player.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
-            if (dotProduct < 0f) {
+            //if (dotProduct < 0f) {
                 float rotation = receiver.eulerAngles.y - transform.eulerAngles.y;
                 //float rotation = Quaternion.Angle(transform.rotation, receiver.rotation);
                 //rotation += 180f;
@@ -26,7 +26,7 @@ public class PortalTeleport : MonoBehaviour
                 player.position = receiver.position + offset;
 
                 overlapping = false;
-            }
+            //}
         }
     }
 
