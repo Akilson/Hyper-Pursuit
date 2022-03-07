@@ -109,7 +109,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 		PhotonNetwork.LeaveRoom();
 		MenuManager.Instance.OpenMenu("loading");
 	}
-	//fn that try to join the room
+	//fn to that try to join the room
 	public void JoinRoom(RoomInfo info)
 	{
 		PhotonNetwork.JoinRoom(info.Name);
@@ -124,22 +124,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 	//its i called each time the roomlist is updated
 	public override void OnRoomListUpdate(List<RoomInfo> roomList) //the it is a list of info where each elt of the list corresponds to the infos of a player
 	{
-		List<Transform> rooms = new List<Transform>();
 		foreach(Transform trans in roomListContent)
 		{
-			bool state = true;
-			foreach(Transform tran in rooms)
-			{
-				if (trans == tran)
-				{
-					Destroy(trans.gameObject);
-					state = false;
-					break;
-				}
-			}
-			if (state) {
-				rooms.Add(trans);
-			}
+			Destroy(trans.gameObject);
 		}
 
 		for(int i = 0; i < roomList.Count; i++)
