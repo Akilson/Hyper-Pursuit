@@ -15,7 +15,7 @@ public class PlayerListItem : MonoBehaviourPunCallbacks
 		player = _player;
 		text.text = _player.NickName;
 	}
-
+	//destroy itslef when the player leave the room
 	public override void OnPlayerLeftRoom(Player otherPlayer)
 	{
 		if(player == otherPlayer)
