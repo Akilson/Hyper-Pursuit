@@ -26,41 +26,51 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 	void Start()
 	{
-		Debug.Log("Connecting to Master");
+		Debug.Log("Connecting to Masterserver");
+		//Connect to the photon server using the settings defined in unity (in our case we have only change the region)
 		PhotonNetwork.ConnectUsingSettings();
 	}
 
+	//it is called when we are finally connected to the master (server)
+	//it is a callback called by photon when we successfully connect to the master server
 	public override void OnConnectedToMaster()
 	{
 		Debug.Log("Connected to Master");
+		//the place where we create or join a room
 		PhotonNetwork.JoinLobby();
+		//use to apply to all the scene modification on the host to all the clients
 		PhotonNetwork.AutomaticallySyncScene = true;
 	}
 
+	//it is called when we joined the lobby
 	public override void OnJoinedLobby()
 	{
 		MenuManager.Instance.OpenMenu("title");
 		Debug.Log("Joined Lobby");
 		PhotonNetwork.NickName = "Player" + Random.Range(0, 1000).ToString("0000");
 	}
-
+	//fn used whith the CreateRoom menu
 	public void CreateRoom()
 	{
 		if(string.IsNullOrEmpty(roomNameInputField.text))
 		{
 			return;
 		}
-		PhotonNetwork.CreateRoom(roomNameInputField.text);
+		//ask to the photon server to create a new room
+		PhotonNetwork.CreateRoom(roomNameInputField.text); //When we create a room there is 2 possible callbacks: either we successfully create and so join a room(OnJoinedRoom) or  we failed to create a room(OnCreateRoomFailed)
+		//We open again the loading scene because it takes some time to create the room
 		MenuManager.Instance.OpenMenu("loading");
 	}
-
+	//it is called when we succed to join a room
 	public override void OnJoinedRoom()
 	{
+		//open the menu "room"
 		MenuManager.Instance.OpenMenu("room");
+		//set in the text field of room the current name of the created room
 		roomNameText.text = PhotonNetwork.CurrentRoom.Name;
-
+		//put in the players list all the players in the room
 		Player[] players = PhotonNetwork.PlayerList;
-
+		//if we don't have this each time we leave and create a new room the player are stacking and not destroyed
 		foreach(Transform child in playerListContent)
 		{
 			Destroy(child.gameObject);
@@ -69,14 +79,16 @@ public class Launcher : MonoBehaviourPunCallbacks
 		for(int i = 0; i < players.Count(); i++)
 		{
 			Debug.Log("player instantiated");
+			//instantiate PlayerListItemPrefab in playerListContent and setup the info of the players
 			Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
 		}
-
+		//the start button is active if only we are the host of the server
 		startGameButton.SetActive(PhotonNetwork.IsMasterClient);
 	}
-
+	//call when the host leaves the room
 	public override void OnMasterClientSwitched(Player newMasterClient)
 	{
+		//the start button is only accessible to the new host
 		startGameButton.SetActive(PhotonNetwork.IsMasterClient);
 	}
 
@@ -97,19 +109,20 @@ public class Launcher : MonoBehaviourPunCallbacks
 		PhotonNetwork.LeaveRoom();
 		MenuManager.Instance.OpenMenu("loading");
 	}
-
+	//fn to that try to join the room
 	public void JoinRoom(RoomInfo info)
 	{
 		PhotonNetwork.JoinRoom(info.Name);
 		MenuManager.Instance.OpenMenu("loading");
 	}
 
+	//called when the room is finally lefted
 	public override void OnLeftRoom()
-	{
+	{ 
 		MenuManager.Instance.OpenMenu("title");
 	}
-
-	public override void OnRoomListUpdate(List<RoomInfo> roomList)
+	//its i called each time the roomlist is updated
+	public override void OnRoomListUpdate(List<RoomInfo> roomList) //the it is a list of info where each elt of the list corresponds to the infos of a player
 	{
 		foreach(Transform trans in roomListContent)
 		{
@@ -118,12 +131,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 		for(int i = 0; i < roomList.Count; i++)
 		{
-			if(roomList[i].RemovedFromList)
+			if(roomList[i].RemovedFromList)//removedlist just set a bool to true if it is remove
 				continue;
+			//instantiate a roomListItemPrefab in our roomListContent
 			Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
 		}
 	}
-
+	//it is called when another player enters the room
 	public override void OnPlayerEnteredRoom(Player newPlayer)
 	{
 		Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(newPlayer);

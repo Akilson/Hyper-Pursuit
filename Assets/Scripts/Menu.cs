@@ -5,6 +5,7 @@ using UnityEngine;
 public class Menu : MonoBehaviour
 {
 	public string menuName;
+	//we use the bool for the menumanager
 	public bool open;
 
 	public void Open()
