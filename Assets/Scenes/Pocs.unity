@@ -1584,6 +1584,10 @@ PrefabInstance:
       propertyPath: m_TargetTexture
       value: 
       objectReference: {fileID: 8400000, guid: 0955e864f0d9b174d8a4ea8f27967739, type: 2}
+    - target: {fileID: 3611144323325107414, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3611144323432660998, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2623,7 +2627,7 @@ GameObject:
   - component: {fileID: 1711831515}
   - component: {fileID: 1711831514}
   - component: {fileID: 1711831513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
