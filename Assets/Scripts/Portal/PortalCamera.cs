@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
-    public Transform player;
+    public GameObject player;
     public Transform portal1;
     public Transform portal2;
+    
+    private Transform camera;
+
+    void Start(){
+        camera = player.transform.GetChild(0).GetChild(0);
+    }
 
     // Update is called once per frame
     void Update()
     {
 
-    transform.position = player.position;
-    transform.rotation = player.rotation;
+    transform.position = camera.position;
+    transform.rotation = camera.rotation;
 
     //float angle = -Quaternion.Angle(portal1.rotation, portal2.rotation);
     float angle = portal2.transform.eulerAngles.y - portal1.transform.eulerAngles.y;

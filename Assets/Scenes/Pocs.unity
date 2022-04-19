@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: portal2
       value: 
@@ -1066,7 +1066,7 @@ PrefabInstance:
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: portal2
       value: 
@@ -1575,7 +1575,7 @@ PrefabInstance:
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: portal2
       value: 
@@ -1956,7 +1956,7 @@ PrefabInstance:
     - target: {fileID: 6893914460265447081, guid: 84d0dda0f6d51fc4a9560ca436139d49, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     - target: {fileID: 6893914460265447082, guid: 84d0dda0f6d51fc4a9560ca436139d49, type: 3}
       propertyPath: m_TargetTexture
       value: 
@@ -2032,7 +2032,7 @@ PrefabInstance:
     - target: {fileID: 6893914461919290132, guid: 84d0dda0f6d51fc4a9560ca436139d49, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d0dda0f6d51fc4a9560ca436139d49, type: 3}
 --- !u!1 &1479947429
@@ -2845,11 +2845,6 @@ Transform:
   m_Father: {fileID: 49299651}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1956072446 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1110012715905253564, guid: 83c7263bd50b7b043b928c51d4d9c743, type: 3}
-  m_PrefabInstance: {fileID: 1294666708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1964200074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3611144323809326317, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
@@ -2919,7 +2914,7 @@ PrefabInstance:
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1956072446}
+      objectReference: {fileID: 2135665806}
     - target: {fileID: 3611144323325107413, guid: abba8525d391e92439130f0c7cfdd645, type: 3}
       propertyPath: portal2
       value: 
@@ -3220,6 +3215,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6893914460644638167, guid: 84d0dda0f6d51fc4a9560ca436139d49, type: 3}
   m_PrefabInstance: {fileID: 1337138866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2135665806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3829350763648830957, guid: 83c7263bd50b7b043b928c51d4d9c743, type: 3}
+  m_PrefabInstance: {fileID: 1294666708}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2147240702
 GameObject:
