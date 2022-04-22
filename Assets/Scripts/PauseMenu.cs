@@ -40,6 +40,11 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void LauchSettings()
+    {
+        //SceneManager.LoadScene();
+    }
+
     //public void LoadMenu()
     //{
     //    Time.timeScale = 1f;
