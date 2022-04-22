@@ -7,6 +7,7 @@ using UnityEngine;
 public class RoomListItem : MonoBehaviour
 {
 	[SerializeField] TMP_Text text;
+	[SerializeField] Menu error;
 
 	public RoomInfo info;
 
@@ -21,6 +22,10 @@ public class RoomListItem : MonoBehaviour
 		if (info.PlayerCount < 2)
 		{
 			Launcher.Instance.JoinRoom(info);
+		}
+		else
+		{
+			error.Open();
 		}
 	}
 }
