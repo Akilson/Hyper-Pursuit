@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 4180558905291968413}
   - component: {fileID: 3012906312568704587}
   m_Layer: 0
-  m_Name: PlayerController
+  m_Name: PlayerControllerB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 93be18ccd5bb0d544931394c0f5ac9bc, type: 2}
+  - {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
