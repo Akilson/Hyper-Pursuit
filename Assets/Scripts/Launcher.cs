@@ -9,6 +9,7 @@ using System.Linq;
 public class Launcher : MonoBehaviourPunCallbacks
 {
 	public static Launcher Instance;
+	private static Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
 
 	[SerializeField] TMP_InputField roomNameInputField;
 	[SerializeField] TMP_Text errorText;
@@ -56,8 +57,10 @@ public class Launcher : MonoBehaviourPunCallbacks
 		{
 			return;
 		}
+		//RoomOptions options = new RoomOptions();
+		//options.MaxPlayers = 1;
 		//ask to the photon server to create a new room
-		PhotonNetwork.CreateRoom(roomNameInputField.text); //When we create a room there is 2 possible callbacks: either we successfully create and so join a room(OnJoinedRoom) or  we failed to create a room(OnCreateRoomFailed)
+		PhotonNetwork.CreateRoom(roomNameInputField.text);//,options); //When we create a room there is 2 possible callbacks: either we successfully create and so join a room(OnJoinedRoom) or  we failed to create a room(OnCreateRoomFailed)
 		//We open again the loading scene because it takes some time to create the room
 		MenuManager.Instance.OpenMenu("loading");
 	}
@@ -120,6 +123,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 	public override void OnLeftRoom()
 	{ 
 		MenuManager.Instance.OpenMenu("title");
+		cachedRoomList.Clear();
 	}
 	//its i called each time the roomlist is updated
 	public override void OnRoomListUpdate(List<RoomInfo> roomList) //the it is a list of info where each elt of the list corresponds to the infos of a player
@@ -129,13 +133,22 @@ public class Launcher : MonoBehaviourPunCallbacks
 			Destroy(trans.gameObject);
 		}
 
-		for(int i = 0; i < roomList.Count; i++)
-		{
-			if(roomList[i].RemovedFromList)//removedlist just set a bool to true if it is remove
-				continue;
-			//instantiate a roomListItemPrefab in our roomListContent
-			Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(roomList[i]);
-		}
+		for (int i = 0; i < roomList.Count; i++)
+        {
+            RoomInfo info = roomList[i];
+            if (info.RemovedFromList)
+            {
+                cachedRoomList.Remove(info.Name);
+            }
+            else
+            {
+                cachedRoomList[info.Name] = info;
+            }
+        }
+		foreach (KeyValuePair<string, RoomInfo> entry in cachedRoomList)
+        {
+            Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().SetUp(cachedRoomList[entry.Key]);
+        }
 	}
 	//it is called when another player enters the room
 	public override void OnPlayerEnteredRoom(Player newPlayer)

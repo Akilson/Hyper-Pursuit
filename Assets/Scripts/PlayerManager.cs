@@ -7,6 +7,7 @@ using System.IO;
 public class PlayerManager : MonoBehaviour
 {
     PhotonView PV;
+    private int inst = 0; 
     void Awake()
     {
         PV =GetComponent<PhotonView>();
@@ -22,7 +23,16 @@ public class PlayerManager : MonoBehaviour
 
     void CreateController()
     {
-        Debug.Log("instantiated player controller");
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerController"), Vector3.zero, Quaternion.identity);
+        if (PV.Controller.IsMasterClient)
+        {
+            Debug.Log("instantiated White player controller");
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerController"), Vector3.zero, Quaternion.identity);
+            inst++;
+        }
+        else
+        {
+            Debug.Log("instantiated Black player controller");
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerControllerB"), Vector3.one, Quaternion.identity);
+        }
     }
 }
