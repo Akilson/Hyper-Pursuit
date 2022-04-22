@@ -11,6 +11,8 @@ public class EnemyAI : MonoBehaviour
 
     public Transform[] waypoints;
     int waypointsIndex;
+
+    bool destroy = false;
     Vector3 target;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         if(Vector3.Distance(transform.position,target) < 5)
         {
-            if(waypointsIndex < 0)
+            if(destroy)
             {
             }
             else
@@ -47,7 +49,8 @@ public class EnemyAI : MonoBehaviour
         if (waypointsIndex == waypoints.Length)
         {
             Destroy(go);
-            waypointsIndex = -1;
+            destroy = true;
+            waypointsIndex = 0;
         }
     }
 }
