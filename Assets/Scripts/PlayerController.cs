@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
+        if(Input.GetKeyDown(KeyCode.Space) && grounded && (!PauseMenuW.GameIsPausedd || !PauseMenuB.GameIsPaused))
         {
             rb.AddForce(transform.up * jumpForce);
         }
