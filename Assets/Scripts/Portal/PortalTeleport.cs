@@ -21,7 +21,11 @@ public class PortalTeleport : MonoBehaviour
     void Update()
     {
         if (player is null)
-            player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+            if (playerObj is not null)
+                player = playerObj.transform;
+        }
         else if (overlapping) {
             Vector3 portalToPlayer = player.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
