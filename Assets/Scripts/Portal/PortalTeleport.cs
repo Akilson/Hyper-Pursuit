@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class PortalTeleport : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
+    public string playerTag;
     public Transform receiver;
 
     private bool overlapping = false;
+    
 
+    void Start()
+    {
+        player = null;
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        if (overlapping) {
+        if (player is null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+            if (playerObj is not null)
+                player = playerObj.transform;
+        }
+        else if (overlapping) {
             Vector3 portalToPlayer = player.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
