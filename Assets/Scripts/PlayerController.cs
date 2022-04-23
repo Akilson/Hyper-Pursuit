@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(!PV.IsMine || PauseMenu.GameIsPaused)
+        if(!PV.IsMine || PauseMenuW.GameIsPausedd || PauseMenuB.GameIsPaused)
             return;
         Look();
         Move();

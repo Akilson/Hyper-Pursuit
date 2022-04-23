@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenuW : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public static bool GameIsPausedd = false;
     public GameObject pauseMenuUI;
 
     // Update is called once per frame
@@ -14,12 +14,14 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (GameIsPausedd)
             {
+                Debug.Log("unpaused");
                 Resume();
             }
             else
             {
+                Debug.Log("paused");
                 Pause();
             }
         }
@@ -29,7 +31,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        GameIsPausedd = false;
 
     }
 
@@ -37,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        GameIsPausedd = true;
     }
 
     public void LauchSettings()
