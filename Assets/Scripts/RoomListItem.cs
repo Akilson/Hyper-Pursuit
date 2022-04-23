@@ -14,7 +14,13 @@ public class RoomListItem : MonoBehaviour
 	public void SetUp(RoomInfo _info)
 	{
 		info = _info;
-		text.text = _info.Name;
+		if (info.PlayerCount >= 2)
+		{
+			text.text = "room is full";
+			info.RemovedFromList = true;
+		}
+		else
+			text.text = _info.Name;
 	}
 
 	public void OnClick()
@@ -22,10 +28,6 @@ public class RoomListItem : MonoBehaviour
 		if (info.PlayerCount < 2)
 		{
 			Launcher.Instance.JoinRoom(info);
-		}
-		else
-		{
-			error.Open();
 		}
 	}
 }
