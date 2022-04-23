@@ -16,6 +16,7 @@ public class PortalCamera : MonoBehaviour
         player = null;
         playerCam = null;
         white = PhotonNetwork.IsMasterClient;
+        white = true;
     }
 
     // Update is called once per frame
