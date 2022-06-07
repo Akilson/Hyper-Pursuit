@@ -21513,7 +21513,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -22059,7 +22059,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 2.5
+    angle: 5
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -55791,7 +55791,8 @@ MonoBehaviour:
   - {fileID: 163127833}
   - {fileID: 905218214}
   checkpoints:
-  - {x: 6.3, y: 5, z: 6.3}
+  - {x: -5.95, y: 2, z: -6.2}
+  - {x: 6.3, y: 3.5, z: 6.3}
   EnemyDistanceRun: 4
   playerTag: playerWhite
 --- !u!195 &1518640344

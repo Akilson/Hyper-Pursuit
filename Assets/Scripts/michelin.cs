@@ -37,11 +37,22 @@ public class michelin : MonoBehaviour
                 player = playerObj.transform;
         }
         float distance = Vector3.Distance(transform.position, player.position);
-        Debug.Log("Distance: "+distance);
+
+        if (transform.position == checkpoints[checkpointIndex])
+        {
+            translating = false;
+        }
+        if (translating)
+        {
+            UpdateDestinationCP();
+            Debug.Log("translating");
+        }
 
         if(distance < EnemyDistanceRun && !translating)
         {
+            agent.SetDestination(transform.position);
             IterateCheckpointIndex();
+            Debug.Log("Index:" + checkpointIndex + "position: " + checkpoints[checkpointIndex]);
             UpdateDestinationCP();
         }
         if(Vector3.Distance(transform.position, target) < 1 && !translating)
@@ -78,6 +89,7 @@ public class michelin : MonoBehaviour
 
     void UpdateDestinationCP()
     {
+        AI.transform.position = Vector3.Lerp(transform.position,checkpoints[checkpointIndex],Time.deltaTime);
         translating = true;
     }
 }
