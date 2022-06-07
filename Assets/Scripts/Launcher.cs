@@ -30,6 +30,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 		Debug.Log("Connecting to Masterserver");
 		//Connect to the photon server using the settings defined in unity (in our case we have only change the region)
 		PhotonNetwork.ConnectUsingSettings();
+		PhotonNetwork.AutomaticallySyncScene = true;
 	}
 
 	//it is called when we are finally connected to the master (server)
@@ -81,7 +82,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
 		for(int i = 0; i < players.Count(); i++)
 		{
-			Debug.Log("player instantiated");
+			Debug.Log("player instantiated,there is: "+ players.Count());
 			//instantiate PlayerListItemPrefab in playerListContent and setup the info of the players
 			Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
 		}

@@ -8,6 +8,7 @@ using System.IO;
 public class RoomManager : MonoBehaviourPunCallbacks
 {
 	public static RoomManager Instance;
+	private int nb = 1;
 
 	void Awake()
 	{
@@ -36,6 +37,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 	{
 		if(scene.buildIndex == 1) // We're in the game scene
 		{
+			Debug.Log("Instantiate a player manager nb: "+nb);
+			nb++;
 			PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
 		}
 	}

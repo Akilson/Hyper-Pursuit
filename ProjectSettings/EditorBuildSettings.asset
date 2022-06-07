@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 9cfeb0056cfd2004f981d04f6123f326
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 76059e6a889e15f46b91c5b33492092b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rooms/Denial.unity
     guid: c927490d14070f147b6c2808fbd016b2
+  - enabled: 0
+    path: Assets/pocmulti.unity
+    guid: 6c9ce0c2530e44c41bdf7f6a89f9832d
   m_configObjects: {}

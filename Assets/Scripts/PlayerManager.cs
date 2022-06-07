@@ -6,8 +6,7 @@ using System.IO;
 
 public class PlayerManager : MonoBehaviour
 {
-    PhotonView PV;
-    private int inst = 0; 
+    PhotonView PV; 
     private Vector3 spawnPoint = new Vector3(20, 13, 30);
     void Awake()
     {
@@ -27,13 +26,12 @@ public class PlayerManager : MonoBehaviour
         if (PV.Controller.IsMasterClient)
         {
             Debug.Log("instantiated White player controller");
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerController"), spawnPoint, Quaternion.identity);
-            inst++;
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerController"), spawnPoint, Quaternion.identity,0,new object[] {PV.ViewID});
         }
         else
         {
             Debug.Log("instantiated Black player controller");
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerControllerB"), spawnPoint + new Vector3(0, 100, 0), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs","PlayerControllerB"), spawnPoint + new Vector3(0, 100, 0), Quaternion.identity,0,new object[] {PV.ViewID});
         }
     }
 }
