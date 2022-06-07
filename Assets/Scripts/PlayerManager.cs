@@ -7,7 +7,7 @@ using System.IO;
 public class PlayerManager : MonoBehaviour
 {
     PhotonView PV; 
-    private Vector3 spawnPoint = new Vector3(20, 13, 30);
+    private Vector3 spawnPoint = new Vector3(0, 2, -30);
     void Awake()
     {
         PV =GetComponent<PhotonView>();
