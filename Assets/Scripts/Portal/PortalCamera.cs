@@ -23,7 +23,7 @@ public class PortalCamera : MonoBehaviour
     {
         if (white ^ playerTag == "playerWhite")
         {
-            Debug.Log("Desactivated");
+            //Debug.Log("Desactivated");
             //transform.parent.gameObject.SetActive(false);
             return;
         }
@@ -35,9 +35,9 @@ public class PortalCamera : MonoBehaviour
         }
         else
         {
-            Debug.Log(playerCam);
-            Debug.Log(white);
-            Debug.Log(playerTag);
+            //Debug.Log(playerCam);
+            //Debug.Log(white);
+            //Debug.Log(playerTag);
             transform.position = playerCam.position;
             transform.rotation = playerCam.rotation;
 
