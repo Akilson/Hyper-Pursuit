@@ -26,35 +26,35 @@ public class WorldDuplication : MonoBehaviour
         }
         catch (MissingComponentException) {}
 
-        // Try swap targetted player by PortalTeleport
-        try {
-            PortalTeleport sc = go.GetComponent<PortalTeleport>();
-            if (sc is null)
-                Debug.Log("null !");
-            else { 
-            if (sc.playerTag == tag1)
-                sc.playerTag = tag2;
-            else if (sc.playerTag == tag2)
-                sc.playerTag = tag1;
+       //     // Try swap targetted player by PortalTeleport
+       //     try {
+       //         PortalTeleport sc = go.GetComponent<PortalTeleport>();
+       //         if (sc is null)
+       //             Debug.Log("null !");
+       //         else { 
+       //         if (sc.playerTag == tag1)
+       //             sc.playerTag = tag2;
+       //         else if (sc.playerTag == tag2)
+       //             sc.playerTag = tag1;
 
-            }
-        }
-        catch (MissingComponentException) {}
-        
-        // Try swap targetted player by PortalCamera
-        try {
-            PortalCamera sc = go.GetComponent<PortalCamera>();
-            if (sc is null)
-                Debug.Log("null !");
-            else { 
-            if (sc.playerTag == tag1)
-                sc.playerTag = tag2;
-            else if (sc.playerTag == tag2)
-                sc.playerTag = tag1;
+       //         }
+       //     }
+       //     catch (MissingComponentException) {}
+       // 
+       //     // Try swap targetted player by PortalCamera
+       //     try {
+       //         PortalCamera sc = go.GetComponent<PortalCamera>();
+       //         if (sc is null)
+       //             Debug.Log("null !");
+       //         else { 
+       //         if (sc.playerTag == tag1)
+       //             sc.playerTag = tag2;
+       //         else if (sc.playerTag == tag2)
+       //             sc.playerTag = tag1;
 
-            }
-        }
-        catch (MissingComponentException) {}
+       //         }
+       //     }
+       //     catch (MissingComponentException) {}
 
         for (int i = 0; i < tf.transform.childCount; i++) {
             Transform child = tf.transform.GetChild(i);

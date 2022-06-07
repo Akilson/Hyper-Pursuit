@@ -24,6 +24,7 @@ public class PortalCamera : MonoBehaviour
         if (white ^ playerTag == "playerWhite")
         {
             Debug.Log("Desactivated");
+            //transform.parent.gameObject.SetActive(false);
             return;
         }
         if (playerCam is null)
