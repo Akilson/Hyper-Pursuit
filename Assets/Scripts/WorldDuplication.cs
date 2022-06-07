@@ -16,7 +16,10 @@ public class WorldDuplication : MonoBehaviour
 
         // Try swap material color
         try {
-            Material mat = go.GetComponent<Renderer>().material;
+            Renderer rnd = go.GetComponent<Renderer>();
+            if (rnd is null)
+                throw new MissingComponentException();
+            Material mat = rnd.material;
             if (mat.name.Substring(0, mat1.name.Length) == mat1.name) {
                 go.GetComponent<Renderer>().material = mat2;
             }
