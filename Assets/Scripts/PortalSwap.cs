@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PortalSwap : MonoBehaviour
 {
     public Transform swp;
     public string tag1;
     public string tag2;
+    private bool white;
     // Start is called before the first frame update
     void Start()
     {
+        white = PhotonNetwork.IsMasterClient;
+        if (white) return;
         for (int i = 0; i < swp.transform.childCount; i++) {
             Transform child = swp.transform.GetChild(i);
             child.transform.position += new Vector3(0, 100, 0);
