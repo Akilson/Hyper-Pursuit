@@ -87,13 +87,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 			Instantiate(PlayerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().SetUp(players[i]);
 		}
 		//the start button is active if only we are the host of the server
-		startGameButton.SetActive(!PhotonNetwork.IsMasterClient);
+		startGameButton.SetActive(PhotonNetwork.IsMasterClient);
 	}
 	//call when the host leaves the room
 	public override void OnMasterClientSwitched(Player newMasterClient)
 	{
 		//the start button is only accessible to the new host
-		startGameButton.SetActive(!PhotonNetwork.IsMasterClient);
+		startGameButton.SetActive(PhotonNetwork.IsMasterClient);
 	}
 
 	public override void OnCreateRoomFailed(short returnCode, string message)
