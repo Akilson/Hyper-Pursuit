@@ -40,9 +40,13 @@ public class michelin : MonoBehaviour
         }
         float distance = Vector3.Distance(transform.position, player.position);
 
-        if (transform.position == checkpoints[checkpointIndex])
+        float distanceCP = Vector3.Distance(transform.position, checkpoints[checkpointIndex]);
+
+        if (distanceCP < 1)
         {
             translating = false;
+            transform.gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            UpdateDestination();
         }
         if (translating)
         {
@@ -53,6 +57,7 @@ public class michelin : MonoBehaviour
         if(distance < EnemyDistanceRun && !translating)
         {
             agent.SetDestination(transform.position);
+            transform.gameObject.GetComponent<NavMeshAgent>().enabled = false;
             IterateCheckpointIndex();
             Debug.Log("Index:" + checkpointIndex + "position: " + checkpoints[checkpointIndex]);
             UpdateDestinationCP();
@@ -75,7 +80,7 @@ public class michelin : MonoBehaviour
         waypointIndex++;
         if(waypointIndex%4 == 0)
         {
-            waypointIndex = 0;
+            waypointIndex = 0 + checkpointIndex*4;
         }
     }
 
