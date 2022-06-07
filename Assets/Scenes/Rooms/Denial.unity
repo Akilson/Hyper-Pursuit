@@ -4764,6 +4764,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 7264630049831935742, guid: c78de751db48618478e06d15fbb797a4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 8454250208162771576, guid: c78de751db48618478e06d15fbb797a4, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -6374,6 +6378,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 5398212495265785646, guid: e4af0a716fd190d408044ca155b0d914, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 5774525438895853842, guid: e4af0a716fd190d408044ca155b0d914, type: 3}
       propertyPath: m_Name
       value: stalactitesQuentin_6 Variant
@@ -9473,6 +9481,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 4674782497617755274, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 5864399912001867788, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -12254,6 +12266,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 7712465864769240436, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 8196937474041776968, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
       propertyPath: m_Name
       value: stalactitesQuentin_4 Variant
@@ -12373,6 +12389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactitesQuentin_3 (1) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1479731188751104482, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
 --- !u!1 &365765721
@@ -20369,6 +20389,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactites1 Variant Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6183595413531498394, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
 --- !u!1 &596825741
@@ -25608,6 +25632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactitesQuentin_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1340622418936444214, guid: 34871e9f0de49c04b9a454f76dca6ee6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34871e9f0de49c04b9a454f76dca6ee6, type: 3}
 --- !u!1 &748250720
@@ -26879,6 +26907,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 7054912400432241530, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054912400432241530, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7121301436842799256, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
       propertyPath: m_Name
       value: stalactitesQuentin_3 Variant
@@ -26886,6 +26922,10 @@ PrefabInstance:
     - target: {fileID: 7608868136381458978, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608868136381458978, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7608868136381458978, guid: 8e81d67210ad5d84a88bbb7d57b91736, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28524,6 +28564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactitesQuentin_3 (1) Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479731188751104482, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
 --- !u!1 &828080454
@@ -42329,6 +42373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactites1 Variant Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6183595413531498394, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
 --- !u!1 &1260033892
@@ -42812,6 +42860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactitesQuentin_3 (1) Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479731188751104482, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea9f8b4c1cdae7240aac4ed21c85dbb1, type: 3}
 --- !u!1 &1278061843
@@ -46273,6 +46325,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactitesQuentin_2 Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1340622418936444214, guid: 34871e9f0de49c04b9a454f76dca6ee6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34871e9f0de49c04b9a454f76dca6ee6, type: 3}
 --- !u!4 &1352200651 stripped
@@ -51184,6 +51240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactites1 Variant Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6183595413531498394, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
 --- !u!1 &1482239697
@@ -62774,6 +62834,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 4674782497617755274, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 5864399912001867788, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -64595,6 +64659,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 7712465864769240436, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 8196937474041776968, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
       propertyPath: m_Name
       value: stalactitesQuentin_4 Variant (2)
@@ -65773,6 +65841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 7712465864769240436, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 8196937474041776968, guid: a428c3bb2affbf548b3b7c790534fca8, type: 3}
       propertyPath: m_Name
       value: stalactitesQuentin_4 Variant (1)
@@ -68043,6 +68115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2031552727}
     m_Modifications:
+    - target: {fileID: 4674782497617755274, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     - target: {fileID: 5864399912001867788, guid: 400aee2cdac33f846bdd6cdb15653884, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -69432,6 +69508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stalactites1 Variant Variant (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6183595413531498394, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f16950a9af761546b0909de10b76837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e116317c7a7e0de4484de9ba904e4fae, type: 3}
 --- !u!1 &2054095918
