@@ -8,6 +8,8 @@ public class michelin : MonoBehaviour
     [SerializeField] GameObject AI;
     NavMeshAgent agent;
     public Transform[] waypoints;
+    private float speeed = 0.01f;
+    private float tValue = 0.0f;
 
     public Vector3[] checkpoints;
     int checkpointIndex;
@@ -89,7 +91,8 @@ public class michelin : MonoBehaviour
 
     void UpdateDestinationCP()
     {
-        AI.transform.position = Vector3.Lerp(transform.position,checkpoints[checkpointIndex],Time.deltaTime);
+        tValue += Time.deltaTime * speeed;
+        transform.position = Vector3.Lerp(transform.position, checkpoints[checkpointIndex], tValue);
         translating = true;
     }
 }
