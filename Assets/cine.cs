@@ -6,19 +6,9 @@ public class cine : MonoBehaviour
 {
     private int frames;
     // Start is called before the first frame update
-    void Start()
+    public void SkipButton()
     {
-        frames = 0;
-    }
-
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        frames++;
-        if (frames == 3000)
-        {
-            this.gameObject.SetActive(false);
-        }
+        this.gameObject.SetActive(false);
+        
     }
 }
