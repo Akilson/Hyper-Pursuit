@@ -45,7 +45,7 @@ public class michelin : MonoBehaviour
         if (playerWhite is null)
             distanceWhite = float.MaxValue;
         else
-            distanceWhite = Vector3.Distance(transform.position, playerBlack.position);
+            distanceWhite = Vector3.Distance(transform.position, playerWhite.position);
         
         if (playerBlack is null)
         {
