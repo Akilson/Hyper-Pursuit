@@ -20508,8 +20508,8 @@ MonoBehaviour:
   - {x: -16.3, y: 8.3, z: 12.2}
   - {x: -37, y: 9.8, z: -5.1}
   EnemyDistanceRun: 4
-  playerWhiteTag: 
-  playerBlackTag: 
+  playerWhiteTag: playerWhite
+  playerBlackTag: playerBlack
 --- !u!1 &435908378
 GameObject:
   m_ObjectHideFlags: 0
