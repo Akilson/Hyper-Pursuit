@@ -87,11 +87,11 @@ public class michelin : MonoBehaviour
     void IterateCheckpointIndex()
     {
         checkpointIndex++;
-        waypointIndex = 4*checkpointIndex;
         if(checkpointIndex == checkpoints.Length)
         {
-            checkpointIndex = 0;
+            checkpointIndex = 1;
         }
+        waypointIndex = 4*checkpointIndex;
     }
 
     void UpdateDestinationCP()
