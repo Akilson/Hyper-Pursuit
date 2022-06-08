@@ -14,15 +14,18 @@ public class michelin : MonoBehaviour
     public Vector3[] checkpoints;
     int checkpointIndex;
     public float EnemyDistanceRun = 4.0f;
-    private Transform player;
-    public string playerTag;
+    private Transform playerWhite;
+    private Transform playerBlack;
+    public string playerWhiteTag;
+    public string playerBlackTag;
     int waypointIndex;
     Vector3 target;
     bool translating;
     // Start is called before the first frame update
     void Start()
     {
-        player = null;
+        playerWhite = null;
+        playerBlack = null;
         agent = GetComponent<NavMeshAgent>();
         checkpointIndex = 0;
         translating = false;
@@ -32,13 +35,29 @@ public class michelin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player is null)
+        if (playerWhite is null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag(playerTag);
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerWhiteTag);
             if (playerObj is not null)
-                player = playerObj.transform;
+                playerWhite = playerObj.transform;
         }
-        float distance = Vector3.Distance(transform.position, player.position);
+        float distanceWhite;
+        if (playerWhite is null)
+            distanceWhite = float.MaxValue;
+        else
+            distanceWhite = Vector3.Distance(transform.position, playerBlack.position);
+        
+        if (playerBlack is null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag(playerBlackTag);
+            if (playerObj is not null)
+                playerBlack = playerObj.transform;
+        }
+        float distanceBlack;
+        if (playerBlack is null)
+            distanceBlack = float.MaxValue;
+        else
+            distanceBlack = Vector3.Distance(transform.position, playerBlack.position - new Vector3(0, 100, 0));
 
         float distanceCP = Vector3.Distance(transform.position, checkpoints[checkpointIndex]);
 
@@ -54,6 +73,7 @@ public class michelin : MonoBehaviour
             Debug.Log("translating");
         }
 
+        float distance = Mathf.Min(distanceBlack, distanceWhite);
         if(distance < EnemyDistanceRun && !translating)
         {
             agent.SetDestination(transform.position);
