@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 3
-  sprintSpeed: 6
+  sprintSpeed: 5
   walkSpeed: 3
   jumpForce: 300
   smoothTime: 0.15
