@@ -17,7 +17,6 @@ public class PauseMenuW : MonoBehaviour
             if (GameIsPausedd)
             {
                 Debug.Log("unpaused");
-                Resume();
             }
             else
             {
@@ -32,7 +31,6 @@ public class PauseMenuW : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPausedd = false;
-
     }
 
     void Pause()

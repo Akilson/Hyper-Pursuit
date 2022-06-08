@@ -17,7 +17,6 @@ public class PauseMenuB : MonoBehaviour
             if (GameIsPaused)
             {
                 Debug.Log("unpaused");
-                Resume();
             }
             else
             {

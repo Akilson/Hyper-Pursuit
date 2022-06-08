@@ -33,7 +33,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(!PV.IsMine || PauseMenuW.GameIsPausedd || PauseMenuB.GameIsPaused)
-            return;
+            {
+                Cursor.visible = true;
+                return;
+            }
+        Cursor.visible = false;
         Look();
         Move();
         Jump();
