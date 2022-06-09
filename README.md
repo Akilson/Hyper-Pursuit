@@ -6,6 +6,7 @@
  - Abigaëlle Panhelleux
  - Angela Saade
  - Quentin Rataud
+ - Lola
 
 ## Website :
-https://akilson.github.io/website/
+https://akilson.github.io/siteweb/
